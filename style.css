@@ -1,0 +1,132 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #333533;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    flex-direction: column;
+}
+
+.cont {
+    position: relative;
+}
+
+.heading {
+    font-size: 3rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    color: #ffd100;  /* Yellow color for the heading */
+    text-align: center;
+    position: relative;
+    left: 145px;
+    top: -30px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    transform: translate(-50%, -50%);
+}
+
+.game-container {
+    display: flex;
+    align-items: center;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 10px;
+    position: relative;
+    padding: 20px;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: #333333;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cell:hover {
+    transform: scale(1.1);
+    background-color: #d3f9d8;
+}
+
+.cell.taken {
+    pointer-events: none;
+}
+
+.cell.X {
+    color: #3498db;
+    text-shadow: 0 0 8px #3498db;
+}
+
+.cell.O {
+    color: #e74c3c;
+    text-shadow: 0 0 8px #e74c3c;
+}
+
+
+.message {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 1.5rem;
+    color: #ffffff;
+}
+
+.win-line {
+    position: absolute;
+    background-color: #1abc9c;
+    height: 5px;
+    width: 0;
+    transform-origin: left;
+    transition: width 0.5s ease, transform 0.5s ease;
+    z-index: 1;
+}
+
+.button-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+button {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    background-color: #ffd100;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+button:disabled {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+}
+
+button:hover {
+    background-color: #000000;
+    color: #ffd100;
+}
+
+.turn-indicator {
+    font-size: 2.26rem;
+    color: #57afed;
+    margin-left: 20px;
+    position: absolute;
+    top: 275px;
+    left: 250px;
+    transform: translateY(-50%);
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
